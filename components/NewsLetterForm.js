@@ -13,23 +13,27 @@ const NewsForm = () => {
   };
 
   return (
-    <form className=" flex flex-wrap gap-2 border justify-between items-center rounded-md pr-4">
-      <div className="w-4/5 flex items-center gap-2">
+    <form className="flex lg:gap-2 border justify-between items-center rounded-xl text-lg">
+      <div className="md:w-4/5 w-[60%] flex items-center gap-2 flex-wrap p-2">
         <input
           placeholder="اسمك..."
           name="name"
           onChange={setUser}
-          className="bg-white w-[30%] focus:outline-none"
+          className="bg-white md:w-[30%] focus:outline-none"
         />
-        <span className="h-[30px] w-[1px] bg-black inline-block"></span>
+        <span className="h-[30px] w-[1px] bg-black md:inline-block hidden"></span>
         <input
           placeholder="بريدك الالكتروني ..."
           name="email"
+          type={"email"}
           onChange={setUser}
-          className="bg-white w-[1fr] focus:outline-none"
+          className="bg-white md:w-[60%] focus:outline-none"
         />
       </div>
-      <button type="submit" className="bg-[#2a29bf] text-white p-4">
+      <button
+        type="submit"
+        className="bg-[#2a29bf] text-white md:p-2 rounded-xl md:rounded-tr-none md:rounded-br-none p-4"
+      >
         اشترك
       </button>
     </form>

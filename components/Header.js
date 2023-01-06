@@ -11,11 +11,11 @@ const Header = () => {
     theme === "light" ? setTheme("dark") : setTheme("light");
   };
   return (
-    <header className="flex justify-between p-8 py-4 items-center">
+    <header className="flex justify-between md:p-8 py-4 px-2 items-center">
       <h1 className="font-aref text-3xl">
         <Link href={"/"}>مدارج البرمجة</Link>
       </h1>
-      <div className="flex justify-center gap-8 text-xl">
+      <div className="md:flex justify-center gap-8 text-xl hidden">
         <Link href={"/articles"}>مقالات</Link>
         <a href="#" target="_blank">
           قناة اليوتيوب
@@ -23,7 +23,7 @@ const Header = () => {
         <Link href="#contact">تواصل معي</Link>
       </div>
 
-      <div>
+      <div className="hidden lg:block">
         <button onClick={changeTheme}>
           <Image
             src={theme === "light" ? moon : sun}

@@ -2,18 +2,18 @@ import NewsForm from "./NewsLetterForm";
 
 const Intro = () => {
   return (
-    <section className="text-2xl p-8 flex flex-wrap gap-8">
-      <div className="lg:w-1/2">
+    <section className="lg:text-3xl text-xl md:p-8 flex flex-wrap gap-8 w-screen">
+      <div className="lg:w-1/2 w-screen md:p-4 p-2">
         <div>
-          <div className="leading-9">
+          <div className="lg:leading-9">
             <h2>
               أهلا بك في{" "}
-              <span className="text-red-500 font-aref text-3xl">
+              <span className="text-red-500 font-aref lg:text-3xl text-2xl">
                 مدارج البرمجة
               </span>
             </h2>
             <p className="">
-              <span className="text-red-500 font-aref text-2xl mx-2">
+              <span className="text-red-500 font-aref lg:text-3xl text-2xl mx-2">
                 مدارج البرمجة
               </span>{" "}
               هي مدونة تسعي الي رفع كفاءة مطور الويب العربي، عن طريق شرح أهم
@@ -21,15 +21,16 @@ const Intro = () => {
               أسئلة المقابلات الشخصية مع شرحها شرحا وافيا.
             </p>
           </div>
-          <div className="text-xl mt-4">
+          <div className="text-base mt-4">
             <p>
-              كل أسبوع، يتم نشر مقال، اشترك في خدمة البريد ليصلك أهم ما يتم نشره
+              كل أسبوع، يتم نشر مقال عن التقنية، اشترك في خدمة البريد ليصلك أهم
+              ما يتم نشره
             </p>
             <NewsForm />
           </div>
         </div>
       </div>
-      <div>أفضل المقالات</div>
+      <div className="m-2">أفضل المقالات</div>
     </section>
   );
 };

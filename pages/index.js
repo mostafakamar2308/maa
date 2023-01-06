@@ -11,7 +11,7 @@ export default function Home() {
       dir="rtl"
       className={`${
         theme === "light" ? "bg-white text-black" : "bg-black "
-      } font-noto min-h-screen`}
+      } font-noto min-h-screen max-w-screen`}
     >
       <Head>
         <title>مدارج البرمجة</title>
