@@ -15,7 +15,11 @@ const NewsForm = () => {
   };
 
   return (
-    <form className="flex lg:gap-2 border justify-between items-center rounded-xl text-lg lg:text-2xl">
+    <form
+      className={`flex lg:gap-2 border justify-between items-center rounded-xl text-lg lg:text-2xl ${
+        theme === "light" ? " border-black" : " border-white"
+      }`}
+    >
       <div className="md:w-4/5 w-[60%] flex items-center gap-2 flex-wrap p-2">
         <input
           placeholder="اسمك..."

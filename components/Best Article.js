@@ -3,6 +3,7 @@ import demo from "../assets/demo.jpg";
 import arrow from "../assets/arrow.svg";
 import { useContext } from "react";
 import { themeContext } from "../context/context";
+import Link from "next/link";
 
 const BestArticle = () => {
   const { theme } = useContext(themeContext);
@@ -10,7 +11,9 @@ const BestArticle = () => {
   return (
     <div
       className={`lg:w-3/4 w-5/6 h-[350px] mx-auto border  rounded-lg relative ${
-        theme === "light" ? " border-black" : "border-white"
+        theme === "light"
+          ? " border-black bg-[#111] text-white"
+          : "border-white"
       }`}
     >
       <Image
@@ -19,9 +22,9 @@ const BestArticle = () => {
         className="object-cover object-top h-1/2 rounded-t-lg "
       />
 
-      <div className=" h-1/2 p-2 flex flex-col justify-between bg-[rgba(255,255,255,.3)]">
+      <div className=" h-1/2 p-2 flex flex-col justify-between">
         <div>
-          <h2>مقال جامد جدا</h2>
+          <h2 className="text-4xl">مقال جامد جدا</h2>
           <p className="text-lg md:text-xl">
             وصف مقال جامد جدا، بتكلم فيه عن البنت الي بحبها، كاغويا بنت عسل اوي
             والله
@@ -34,7 +37,9 @@ const BestArticle = () => {
           theme === "light" ? " border-black" : "border-white"
         }`}
       >
-        <Image src={arrow} alt="Link to Article" width={40} height={40} />
+        <Link href={"/"}>
+          <Image src={arrow} alt="Link to Article" width={40} height={40} />
+        </Link>
       </div>
     </div>
   );

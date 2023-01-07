@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import arrow from "../assets/arrow.svg";
 import demo from "../assets/demo.jpg";
 const RecentArticle = () => {
@@ -16,7 +17,9 @@ const RecentArticle = () => {
       <div
         className={`rounded-full border p-2 bg-white w-[50px] h-[50px] md:h-[80px] md:w-[80px]  z-100 rotate-[-145deg] `}
       >
-        <Image src={arrow} alt="Link to Article" />
+        <Link href={"/"}>
+          <Image src={arrow} alt="Link to Article" />
+        </Link>
       </div>
     </div>
   );

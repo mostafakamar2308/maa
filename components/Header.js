@@ -17,7 +17,11 @@ const Header = () => {
       </h1>
       <div className="md:flex justify-center gap-8 text-xl hidden">
         <Link href={"/articles"}>مقالات</Link>
-        <a href="#" target="_blank">
+        <a
+          href="https://www.youtube.com/@Madareg_El_Programming"
+          target={"_blank"}
+          rel="noreferrer"
+        >
           قناة اليوتيوب
         </a>
         <Link href="#contact">تواصل معي</Link>
