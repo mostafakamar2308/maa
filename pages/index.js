@@ -4,6 +4,7 @@ import GiftSection from "../components/Gift";
 import Header from "../components/Header";
 import Intro from "../components/Intro";
 import RecentSection from "../components/RecentArticlesSections";
+import Footer from "../components/Who";
 import { themeContext } from "../context/context";
 
 export default function Home() {
@@ -43,6 +44,15 @@ export default function Home() {
        `}
         ></hr>
         <GiftSection />
+        <hr
+          className={`"text-black border-black ${
+            theme === "light"
+              ? " border-black bg-black text-black"
+              : " border-white bg-white text-white"
+          }
+       `}
+        ></hr>
+        <Footer />
       </div>
     </div>
   );
