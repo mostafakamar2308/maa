@@ -32,7 +32,7 @@ const Intro = () => {
         </div>
       </div>
       <div className="m-2">
-        <h2 className="indent-10 mb-2">أفضل المقالات</h2>
+        <h2 className="font-bold text-2xl mb-2">أفضل المقالات</h2>
         <BestArticle />
       </div>
     </section>

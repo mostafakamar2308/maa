@@ -19,7 +19,7 @@ const BestArticle = () => {
         className="object-cover object-top h-1/2 rounded-t-lg "
       />
 
-      <div className=" h-1/2 p-2 flex flex-col justify-between">
+      <div className=" h-1/2 p-2 flex flex-col justify-between bg-[rgba(255,255,255,.3)]">
         <div>
           <h2>مقال جامد جدا</h2>
           <p className="text-lg md:text-xl">
