@@ -2,6 +2,7 @@ import Head from "next/head";
 import { useContext } from "react";
 import Header from "../components/Header";
 import Intro from "../components/Intro";
+import RecentSection from "../components/RecentArticlesSections";
 import { themeContext } from "../context/context";
 
 export default function Home() {
@@ -10,7 +11,7 @@ export default function Home() {
     <div
       dir="rtl"
       className={`${
-        theme === "light" ? "bg-white text-black" : "bg-black "
+        theme === "light" ? "bg-white text-black" : "bg-[#36263f] "
       } font-noto min-h-screen max-w-screen`}
     >
       <Head>
@@ -21,6 +22,8 @@ export default function Home() {
       <div>
         <Header />
         <Intro />
+        <hr></hr>
+        <RecentSection />
       </div>
     </div>
   );

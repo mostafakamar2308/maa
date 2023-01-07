@@ -1,8 +1,9 @@
+import BestArticle from "./Best Article";
 import NewsForm from "./NewsLetterForm";
 
 const Intro = () => {
   return (
-    <section className="lg:text-3xl text-xl md:p-8 flex flex-wrap gap-8 w-screen">
+    <section className="lg:text-3xl text-xl md:p-8 flex flex-wrap md:flex-nowrap gap-8 w-screen">
       <div className="lg:w-1/2 w-screen md:p-4 p-2">
         <div>
           <div className="lg:leading-9">
@@ -30,7 +31,10 @@ const Intro = () => {
           </div>
         </div>
       </div>
-      <div className="m-2">أفضل المقالات</div>
+      <div className="m-2">
+        <h2 className="indent-10 mb-2">أفضل المقالات</h2>
+        <BestArticle />
+      </div>
     </section>
   );
 };
