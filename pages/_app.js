@@ -1,10 +1,13 @@
+import Layout from "../components/Layout";
 import Context from "../context/context";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
   return (
     <Context>
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </Context>
   );
 }

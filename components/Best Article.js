@@ -12,8 +12,8 @@ const BestArticle = () => {
     <div
       className={`lg:w-3/4 w-5/6 h-[350px] mx-auto border  rounded-lg relative ${
         theme === "light"
-          ? " border-black bg-[#111] text-white"
-          : "border-white"
+          ? " border-black bg-darkButtonUnimportantColor text-white"
+          : "border-white bg-lightCodeBackground text-lightCodeText"
       }`}
     >
       <Image

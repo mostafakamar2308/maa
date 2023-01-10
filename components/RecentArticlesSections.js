@@ -35,7 +35,7 @@ const RecentSection = () => {
       <div className="flex justify-center gap-x-8">
         <Link
           href={"/articles"}
-          className="md:py-4 md:px-2 bg-[#2a29bf] p-2 text-white rounded-lg md:text-xl text-lg text-center"
+          className="md:py-4 md:px-2 bg-darkSelectionBackground text-black border-darkBackground border p-2 text-white rounded-lg md:text-xl text-lg text-center"
         >
           تصفح المقالات
         </Link>
@@ -43,7 +43,7 @@ const RecentSection = () => {
           href="https://www.youtube.com/@Madareg_El_Programming"
           target={"_blank"}
           rel="noreferrer"
-          className="md:py-4 md:px-2 bg-[#2a29bf] p-2 text-white rounded-lg md:text-xl text-lg text-center"
+          className="md:py-4 md:px-2 bg-darkSelectionBackground text-black border-darkBackground border p-2 text-white rounded-lg md:text-xl text-lg text-center"
         >
           قناة اليوتيوب
         </a>
