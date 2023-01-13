@@ -1,11 +1,11 @@
 import Highlight from "react-highlight";
-import "highlight.js/styles/felipec.css";
 const CodeBlock = ({ codeText, language }) => {
   return (
-    <div dir="ltr">
-      <Highlight
-        className={`language-${language} lg:w-1/2 mx-auto m-1 w-11/12 text-lg md:text-xl`}
-      >
+    <div dir="ltr" className="relative">
+      <div className="text-white absolute bg-[#1f2937] p-2 rounded-t-lg right-0 -top-5">
+        {language.toUpperCase()}
+      </div>
+      <Highlight className={`language-${language} w-11/12 text-lg `}>
         {codeText}
       </Highlight>
     </div>

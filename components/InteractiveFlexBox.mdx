@@ -1,0 +1,56 @@
+import { Sandpack } from "@codesandbox/sandpack-react";
+import { nightOwl } from "@codesandbox/sandpack-themes";
+import FlexboxEasy from "./FlexboxEasyExample.js";
+import Codeblock from "./CodeBlock.js";
+
+# السلام عليكم ورحمة الله
+
+هسألك سؤال مهم، انت فاتح المدونة دي منين؟ موبايل، تابلت، ولا كمبيوتر؟ وكمان تعرف العرض بتاع جهازك قد ايه؟
+
+هتستغرب وتقول ايه السؤال الغريب دا؟ هقلك إن السؤال دا طبيعي يسأله أي Frontend developer، ودا لان من أهم الحاجات الي بنعملها هي اننا نخلي الموقع شكله كويس علي كل أنواع الاجهزة والمستخدم ميتعصبش وهو بيستخدمه
+
+هتقلي مظبوط وايه المشكلة لحد دلوقتي؟ هقلك مش الاجهزة أحجامها بتختلف؟ هتقول أيوة
+
+طب ومش كدا المساحة المتاحة ليك تختلف علي حسب حجم الجهاز الي المستخدم شغال عليه فبالتالي تنسيق الموقع وتوزيعة العناصر علي الموبايل هيبقي غير علي الكمبيوتر
+تعالي نشوف مثال هيوضحلك قصدي ايه؟
+![اختلاف التنسيق باختلاف حجم الجهاز](/differentLayouts.gif)
+
+زمان بقي كنت هتضطر تعمل التنسيقات دي، وهتحتاج تجرب الموقع بتاعك علي اجهزة مختلفة كتير عشان لو في أي مشاكل
+**لحد ما ظهر ال Flexbox في 2009**
+
+لو شفنا الجزء الي قدامنا دا هنعرف قد ايه الflexbox حاجة هتساعدنا كتير، جرب تغير الرقم كدا
+
+<FlexboxEasy />
+زي مانت شفت كل حاجة اتنسقت بشكل جميل، ومن غير كتابة كتير بالمناسبة، دا الكود الCss
+الي استخدمناه
+<Codeblock
+  language="css"
+  codeText={`
+.parent{
+  display:flex;
+  flex-wrap: wrap;
+}
+.parent > * {
+  min-width:0;
+}
+.input-name{
+  flex-basis: 20% ;
+  flex-grow: 1;
+
+}
+.input-email{
+  flex-basis: 30%;
+  flex-grow: 2;
+}
+.input-submit{
+  flex-basis: 20%;
+  flex-grow: 1;
+}
+`}
+/>
+
+زي مانت شايف، مضطريناش نستخدم أي MediaQueries. ومع ذلك التصميم هيبقي شكله كويس جدا أيا يكن الجهاز الي هتشتغل عليه
+
+<div dir="ltr" className="prose">
+  <Sandpack tempelate="vanilla" theme={nightOwl}></Sandpack>
+</div>
