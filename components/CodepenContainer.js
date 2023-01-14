@@ -2,16 +2,13 @@ import {
   PrefillEmbed,
   PrefillLang,
   useCodePenEmbed,
-  stripIndent,
 } from "react-codepen-prefill-embed";
-import { useContext } from "react";
-import { themeContext } from "../context/context";
 
-const CodePenContainer = ({ htmlCode, CssCode, JsCode, title }) => {
+const CodePenContainer = ({ htmlCode, CssCode, jsCode, title }) => {
   useCodePenEmbed();
   return (
     <PrefillEmbed
-      embedHeight="400px"
+      embedHeight="300px"
       editable
       penTitle={title}
       themeId={"24457"}
@@ -22,7 +19,7 @@ const CodePenContainer = ({ htmlCode, CssCode, JsCode, title }) => {
       {htmlCode && <PrefillLang lang="html">{htmlCode}</PrefillLang>}
 
       {CssCode && <PrefillLang lang="css">{CssCode}</PrefillLang>}
-      {JsCode && <PrefillLang lang="js">{JsCode}</PrefillLang>}
+      {jsCode && <PrefillLang lang="js">{jsCode}</PrefillLang>}
     </PrefillEmbed>
   );
 };
