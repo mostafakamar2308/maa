@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const JustifyContent = () => {
+const JustifyContent = ({ axis }) => {
   const [JustifyContentVal, setJustifyContentVal] = useState("justify-start");
   const changeJustify = (e) => {
     setJustifyContentVal(e.target.value);
@@ -8,15 +8,23 @@ const JustifyContent = () => {
   return (
     <div className="flex border p-2 rounded-lg flex-col gap-2">
       <div
-        className={`flex ${JustifyContentVal} border p-1 [&>*]:p-4 [&>*]:bg-green-400 [&>*]:border [&>*]:border-white [&>*]:rounded-md`}
+        className={`flex ${
+          axis === "column" ? "flex-col" : "flex-row"
+        } ${JustifyContentVal} border p-1 ${
+          axis === "column" ? "h-[400px]" : ""
+        } [&>*]:p-4 [&>*]:bg-emerald-700 [&>*]:border [&>*]:border-white [&>*]:text-2xl [&>*]:rounded-md`}
       >
         <div>1</div>
         <div>2</div>
         <div>3</div>
         <div>4</div>
       </div>
-      <div>
-        <select className="p-1 rounded-md" onChange={changeJustify}>
+      <div className="flex justify-between items-center px-2">
+        <select
+          defaultValue={"justify-start"}
+          className="p-1 rounded-md"
+          onChange={changeJustify}
+        >
           <option value={"justify-start"}>flex-start</option>
           <option value={"justify-end"}>flex-end</option>
           <option value={"justify-center"}>center</option>
@@ -24,6 +32,9 @@ const JustifyContent = () => {
           <option value={"justify-around"}>space-around</option>
           <option value={"justify-evenly"}>space-evenly</option>
         </select>
+        <div className="font-bold border border-orange-500 rounded-lg p-1">
+          flex-direction: {axis}
+        </div>
       </div>
     </div>
   );

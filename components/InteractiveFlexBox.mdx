@@ -5,6 +5,12 @@ import FlexDirectionExample from "./FlexDirectionExample.js";
 import Codeblock from "./CodeBlock.js";
 import CodePenContainer from "./CodePenContainer.js";
 import JustifyContent from "./FlexJustifyContent.js";
+import AlignItemsFlex from "./FlexAlignItems.js";
+import AlignContentFlex from "./FlexAlignContent.js";
+import Align from "./FlexAlign.js";
+import FlexGrow from "./FlexGrow.js"
+import FlexShrink from "./FlexShrink.js"
+import FlexGrowDifferently from "./FlexGrowDifferently.js"
 
 # السلام عليكم ورحمة الله
 
@@ -29,8 +35,7 @@ Flexbox من اسمه فيه كلمة Flex والي هي اختصار ل Flexibl
 الي استخدمناه
 <Codeblock
   language="css"
-  codeText={`
-.parent{
+  codeText={`.parent{
   display:flex;
   flex-wrap: wrap;
 }
@@ -98,8 +103,7 @@ Flexbox من اسمه فيه كلمة Flex والي هي اختصار ل Flexibl
 نبدأ الاول بالاب:
 ### Setup The Flex
 بمجرد ما تكتب الخاصية دي، فالأب تقدر تستخدم جواه خواص الflexbox وتوزع العناصر زي ما تحب، وكمان بيخلي كل العناصر الي جواه مباشرة تفهم انها هينطبق عليها شوية خصائص للFlexbox
-<Codeblock codeText={`
-.parent{
+<Codeblock codeText={`.parent{
   display: flex;
 }
 `} language={"css"} />
@@ -107,8 +111,7 @@ Flexbox من اسمه فيه كلمة Flex والي هي اختصار ل Flexibl
 ## Flex direction
 الخاصية دي بتحدد ايه الMain Axis والي عن طريقه هتتوزع عليه العناصر
 ،القيمة الافتراضية بتبقي row، بس تقدر تغيرها لأي قيمة من الاربع قيم المتاحين
-<Codeblock codeText={`
-.parent{
+<Codeblock codeText={`.parent{
   flex-direction: row | column | row-reverse | column-reverse;
 }
 `} language={"css"} />
@@ -121,7 +124,7 @@ Flexbox من اسمه فيه كلمة Flex والي هي اختصار ل Flexibl
   - column-reverse: ودي هتخلي الاتجاه عمودي، ويبدأ التوزيع من تحت لفوق
 </div>
 
-<iframe height="400" width="100%" scrolling="no" title="Flex Direction" src="https://codepen.io/mostafakamar2308/embed/WNKOBzP?default-tab=css%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<iframe height="400" width="100%" scrolling="no" title="Flex Direction" src="https://codepen.io/mostafakamar2308/embed/WNKOBzP?default-tab=css%2Cresult&editable=true" frameBorder="no" loading="lazy" allowtransparency="true" allowFullScreenlscreen="true">
   See the Pen <a href="https://codepen.io/mostafakamar2308/pen/WNKOBzP">
   Untitled</a> by Mostafa Kamar (<a href="https://codepen.io/mostafakamar2308">@mostafakamar2308</a>)
   on <a href="https://codepen.io">CodePen</a>.
@@ -132,27 +135,167 @@ Flexbox من اسمه فيه كلمة Flex والي هي اختصار ل Flexibl
 الخاصية دي بتتحكم في توزيع العناصر بالنسبة للmain Axis، وبتعمل دا بشكل تلقائي، فممكن اننا نجمع العناصر كلها في مكان واحد من غير اي مسافات بينهم،
 وممكن برضو نوزع العناصر ونفرقهم عن بعض
 جرب في المثال الجاي كدا، وانت هتفهم قصدي.
-<JustifyContent />
-<Codeblock codeText={`
-.parent{
+<JustifyContent axis="row" />
+طب لو احنا غيرنا الmain Axis هيحصل ايه؟ تعالي نجرب
+<JustifyContent axis="column" />
+كدا زي مانت شفت، اهم حاجة تخص `justify-content` هي انها بتوزع كل العناصر مع بعض علي الmain axis
+ودي القيم الي ممكن الخاصية تاخدها:
+
+<Codeblock codeText={`.parent{
   justify-content: flex-start | flex-end | center | space-between | space-around |space-evenly 
 }`} language={"css"} />
 
+## Align Items
+بما ان عندنا طريقة نوزع بيها العناصر علي الmain axis يبقي اكيد عندنا طريقة نوزع بيها العناصر علي cross axis. 
+ودا هيبقي من خلال خاصية Align Items.
+<AlignItemsFlex axis={"row"}/>
+زي مانت شفت في المثال الي فوق، Justify-content بتوزع العناصر علي الmain axis، اما الalign items بتوزع العناصر بالنسبة للcross axis 
+من خلال الخاصيتين دول تقدر توزع العناصر بالشكل الي تحبه،و ليها استخدامات عملية كتيرة هنشوفها في الاخر.
+
 ## Flex Wrap
 لو خدت بالك فالطبيعي ان العناصر الي موجودة جوا الFlex تحاول انها تبقي علي سطر واحد.
-فلنفترض ان العناصر بقي حجمها أكبر من الأب يبقي هيحصل overflow والتنسيق ساعتها هيبقي شكله مش كويس، أو ممكن كمان يحصل horizontal scroll bar،
-عشان كدا في خاصية اسمها `flex-wrap` والي بتاخد القيم دي:
-- nowrap: العناصر مهما حصل هتفضل علي سطر واحد
-- wrap: لو العناصر بقي حجمها 
+فلنفترض ان العناصر بقي حجمها أكبر من الأب يبقي هيحصل overflow والتنسيق ساعتها هيبقي شكله مش كويس، أو ممكن كمان يحصل horizontal scroll bar،تعالي نشوف كدا قصدي علي ايه
+<iframe height="400" style={{width: "100%"}} scrolling="no" title="Flex Wrap" src="https://codepen.io/mostafakamar2308/embed/GRBvNLG?default-tab=css%2Cresult&editable=true" frameBorder="no" loading="lazy" allowtransparency="true" allowFullScreenlscreen="true">
+  See the Pen <a href="https://codepen.io/mostafakamar2308/pen/GRBvNLG">
+  FlexWrap</a> by Mostafa Kamar (<a href="https://codepen.io/mostafakamar2308">@mostafakamar2308</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 
-<Codeblock codeText={`
-.parent{
-  flex-wrap: nowrap | wrap 
-`} language={"css"} />
+عشان نحل المشكلة دي جرب تزود دا في الparent:
+
+<Codeblock codeText={`.parent{
+  flex-wrap: wrap;
+}`} language={"css"} />
+
+يبقي الي هيساعدنا علي حل دا هي خاصية flex-wrap، والي بتاخد القيم دي:
+<Codeblock codeText={`.parent{
+  flex-wrap: wrap | nowrap;
+}`} language={"css"} />
+<div className="m-4">
+  - wrap: لو العناصر بقي حجمها اكبر من الparent هيتنقلوا علي السطر الي بعده
+  - nowrap: العناصر مهما حصل هتفضل علي سطر واحد، حتي لو هتقلل من حجم العنصر او لو هيحصل horizontal scroll
+</div>
+
+## Align Content
+طالما خلينا `flex-wrap: wrap`، دلوقتي احنا بقي عندنا أكتر من صف من العناصر، دلوقتي في احتياج اننا نتحكم في المسافة بين الصفوف دي او توزيع الصفوف نفسها، الflexbox بيتيحلنا دا بخاصية `align-content` 
+فهنا ممكن نخلي الصفوف دي بعيدة عن بعضها او نجمعهم كلهم مع بعضهم من غير مسافات بينهم ونخليهم في اتجاه معين
+
+دا مش بيفكرك بحاجة؟ بالظبط، شبه `justify-content`
+
+`align-content` بقي بتاخد نفس القيم بتاع `justify-content`، وهنزود عليها قيمة كمان وهي stretch والي هي القيمة الافتراضية.
+<Codeblock codeText={`.parent{
+  align-content: flex-start | flex-end | center | stretch | space-between | space-around;
+}`} language={"css"} />
+
+تعالي نجرب `align-content` في المثال الجاي دا عشان نفهم بتعمل ايه؟
+<AlignContentFlex />
+يبقي باختصار `justify-content` بتوزع العناصر علي main axis، لكن `align-content` بتوزعها علي cross axis
+
+## ايه الفرق بين `align-items` و `align-content`؟
+`align-items` بتتحكم في العناصر نفسها الي جوا الصف وتوزعها بالنسبة للcross axis.
+لكن `align-content` موجودة عشان تتحكم في توزيع الصفوف نفسها، وتأثيرها بيظهر لما بيكون فيه أكتر من صف، يعني من الاخر محتاجة تكون مشغل خاصية `flex-wrap`.
+
+طب لو انا هستخدم الاتنين مع بعض، هيحصل ايه؟ 
+
+الي هيحصل ان لو انت مخلي `align-content` تساوي اي حاجة غير stretch، فمش هيظهر تأثير `align-items`.
+جرب في المثال دا وشوف بنفسك
+<Align />
+ودا لان لو اخترت اي حاجة تانية غير `align-content: stretch` الي بيحصل انك بتخلي الصف  علي قد العناصر بالظبط، بالتالي مش هيبقي فيه مساحة تخلي العناصر نفسها تتحرك من خلال `align-items`.
+لكن لو استخدمت `align-content: stretch` يبقي كانك بتقول للصف اكبر علي قد ما تقدر، ودا هيدي مكان جواه لحركة العناصر.
+
+دلوقتي نبقي خلصنا خصائص الأب، نبدأ نتكلم عن خصائص العناصر. والي هتبقي خصائص تغير مكان العنصر، او تغير في المساحة الي ياخدها
+نبدأ بالحاجات الي تغير مكانه
+## Align Self
+انت شاطر بقي وهتفهم دي لوحدك، زي ما قلنا اي خاصية فيها align تبقي بتتكلم عن توزيع العناصر علي الcross axis، وبما انها `align-self` يبقي دا هيبقي خاص بالعنصر نفسه
+يعني دي بتتحكم في العنصر نفسه بعيد عن باقي العناصر،
+
+<Codeblock codeText={`.child{
+  align-self: flex-start | flex-end | center | stretch
+}`} language={"CSS"} />
+
+ايه رأيك تجرب هنا زي ما متعودين؟
+<iframe height="406" style={{width: "100%"}} scrolling="no" title="Untitled" src="https://codepen.io/mostafakamar2308/embed/BaPdgzv?default-tab=css%2Cresult&editable=true" frameBorder="no" loading="lazy" allowtransparency="true" allowFullScreen="true">
+  See the Pen <a href="https://codepen.io/mostafakamar2308/pen/BaPdgzv">
+  Untitled</a> by Mostafa Kamar (<a href="https://codepen.io/mostafakamar2308">@mostafakamar2308</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+ملحوظة مهمة جدا:
+خلي بالك ان لو ملقتش `align-self` شغالة يبقي غالبا لان العنصر واخد `margin: auto`، فالحل انك تدي العنصر اي قيمة للmargin وهتلاقي `align-self` اشتغلت تاني
+
+## Order
+الطبيعي ان العناصر تظهر للمستخدم بالترتيب الي انت كاتبها فيه في الhtml. لكن احيانا هنحب نغير الترتيب دا، ودا بيظهر خصوصا علي الفون.
+طب احنا ممكن نغير الترتيب دا ازاي؟
+اكيد بخاصية اسمها order.
+
+الخاصية دي بتاخد رقم، والقيمة الافتراضية ليها لكل العناصر بتبقي 0. فبما ان كل العناصر ليهم نفس القيمة فالطبيعي ان ترتيبهم 
+هيبقي شبه ترتيب الكتابة الاصلي.
+في المثال الجاي، انا عايزك تجرب تكتب اي رقم ييجي في دماغك.
+<iframe height="404" style={{width: "100%"}} scrolling="no" title="Untitled" src="https://codepen.io/mostafakamar2308/embed/OJwjKxN?default-tab=css%2Cresult&editable=true" frameBorder="no" loading="lazy" allowtransparency="true" allowFullScreen="true">
+  See the Pen <a href="https://codepen.io/mostafakamar2308/pen/OJwjKxN">
+  Untitled</a> by Mostafa Kamar (<a href="https://codepen.io/mostafakamar2308">@mostafakamar2308</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+لو انت كتبت أي رقم اكبر من 0 هتلاقي ان العنصر الي لونه بنفسجي بقي في الاخر خالص، دا ليه بقي؟
+دا عشان كل العناصر واخده `order: 0` ولما هتدي للعنصر الي انت حابب تغيره اوردر اكبر من 0، يبقي الي هيحصل ان الاول هيظهر العناصر الي ترتيبها 0 بعدها العنصر بتاعك.
+
+طب لو حابب تخلي العنصر في الاول أعمل ايه؟ اديله قيمة بالسالب وهتلاقيه بقي في الاول :D 
+
+### بكدا خلصنا الخصائص الي تغير من مكان العنصر، دلوقتي نتكلم عن الخصائص الي تتحكم في المساحة الي هياخدها العنصر
+
+## Flex Grow
+الطبيعي ان العناصر الي جوا flexbox بتصغر في الحجم وتتجمع جنب بعضها. لما بيحصل دا غالبا بيتبقي مساحة فاضية.
+ودا لان القيمة الافتراضية لل`flex-grow: 0`. يعني كانك بتقول للعنصر انا عايزك متكبرش، خليك علي قد المحتوي الي جواك -او طولك وعرضك لو انت محددهم ليه-
+لو اديت قيمة ل `flex-grow` العنصر هيكبر في الحجم ويملي المساحة الفاضية.
+
+شوف دا هنا:
+<FlexGrow />
+طب احنا عرفنا ان ال`flex-grow` قيمتها الافتراضية 0، طب لو خليناها 1 لكل العناصر جوا الflexbox، هيحصل ايه؟
+جرب تضيف `flex-grow: 1;` جوا الchild وشوف هيبقي زي مانت متوقع ولا ايه؟
+<iframe height="300" style={{width: "100%"}} scrolling="no" title="Untitled" src="https://codepen.io/mostafakamar2308/embed/zYLdggb?default-tab=css%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowFullScreen="true">
+  See the Pen <a href="https://codepen.io/mostafakamar2308/pen/zYLdggb">
+  Untitled</a> by Mostafa Kamar (<a href="https://codepen.io/mostafakamar2308">@mostafakamar2308</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+طب ايه الي هيحصل لو انت اديت اكتر من عنصر `flex-grow`.
+
+جرب هنا وشوف 
+<FlexGrowDifferently />
+يبقي الي بيحصل انك هتقسم المساحة عليهم علي حسب قيمة `flex-grow` وبالتالي كل ما تكون القيمة اكبر كل ما هياخد مساحة أكبر
+
+## Flex Shrink
+والله زي ما الgrow بتخلي العنصر يكبر لو في مساحة فاضية، shrink بتعمل العكس بتخلي العنصر يصغر لو المساحة مش هتكفي.
+بالتالي لو هنقول الي القيم هتعمله، يبقي لو هتديها 0، يبقي العنصر مش هيصغر حجمه أبدا.
+لو هتديها قيمة أكبر من الصفر يبقي العنصر هيصغر.
+وبنفس الطريقة لو في كذا عنصر عندهم `flex-shrink` هيصغروا بس بنسب مختلفة، الي رقمه أكبر هيصغر أكتر وهكذا
+<FlexShrink />
+
+## Flex Basis
+لحد دلوقتي احنا اتكلمنا عن حاجات تزود حجم العنصر لو في مساحة زايدة، وحاجات تقلله لو المساحة ناقصة. طب في حاجة تحدد المساحة الي عايزينها للعنصر بالظبط.
+اكيد طبعاهنستخدم width.
+
+طب لو احنا هيبقي عندنا `flex-direction: column` -للتنسيق بتاع الاجهزة الصغيرة- يبقي اكيد هنحتاج نستخدم height.
+
+بدل ما تستخدم خاصيتين عشان تعمل نفس الحاجة في سيناريوهين مختلفين، نستخدم خاصية واحدة وهي `flex-basis`.
+الي بتعمله الخاصية دي انها بتشوف ايه الmain axis وتديلها حجم معين يناسب الmain axis.
+
+تقدر تجرب دا هنا:
+{/* !!!TODO Make Flex Basis Component */}
+
+
+
 
 
 {/* <div dir="ltr" className="prose">
   <Sandpack tempelate="vanilla" theme={nightOwl}></Sandpack>
 </div> */}
-// تول تيب
-عايزك ديما تحط دي في دماغك، اي خاصية فيها Justify، يبقي هي بتتحكم في تنسيق وتوزيع العناصر بالنسبة للMain Axis. وأي خاصية فيها كلمة Align يبقي هتوزع العناصر بالنسبة للCross Axis
+{/* // تول تيب
+عايزك ديما تحط دي في دماغك، اي خاصية فيها Justify، يبقي هي بتتحكم في تنسيق وتوزيع العناصر بالنسبة للMain Axis. وأي خاصية فيها كلمة Align يبقي هتوزع العناصر بالنسبة للCross Axis */}
+{/* عشان نفهم الفرق انا عايزك تتخيل معايا نوعين من الcross axis، فيه cross axis كبير وهنسميه large cross axis ودا خاص بالاب، وفيه شوية cross axes صغيرة ودي هنسميها mini cross axis كل عنصر من الي جوا الاب هيبقي ليهم واحد.
+عشان تتصور الموضوع شوف الصورة دي
+![Mini cross Axis vs Large Cross axis ](/mini-cross-axis.png)
+الي هيتحكم بقي في large cross axis هيبقي align content، ودي هتاخد كل العناصر وتوزعها في الاب، لكن `align-items` هتوزع العناصر علي ال mini-cross axis.
+طب انا استخدمهم ازاي
+عشان تشوف الموضوع اكتر تعالي نجرب في المثال الجاي */}
