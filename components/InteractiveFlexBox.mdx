@@ -13,6 +13,7 @@ import FlexShrink from "./FlexShrink.js"
 import FlexBasis from "./FlexBasis.js"
 import FlexGap from "./FlexGap.js"
 import FlexGrowDifferently from "./FlexGrowDifferently.js"
+import StyledInput from "./Styledinput.js"
 
 # السلام عليكم ورحمة الله
 
@@ -342,7 +343,66 @@ nav{
 	الصورة من <a href={"https://nicepage.com/feature/80-grid-layouts-447593"} target="_blank">هنا</a>
   </figcaption>
 </figure>
-لو خدت بالك، هتلاقي ان الlayout بدأت تبقي معقدة، وبقي فيه أحجام مختلفة للعناصر. وكمان مش كل العناصر متوزعة علي نفسس المحور. بالتالي اGrid هيبقي أفضل هنا بكتير.
+لو خدت بالك، هتلاقي ان الlayout بدأت تبقي معقدة، وبقي فيه أحجام مختلفة للعناصر. وكمان مش كل العناصر متوزعة علي نفس المحور. بالتالي الGrid هيبقي أفضل هنا بكتير.
+
+## استخدامات عملية
+مش هسيبك بقي الا لما أقلك علي شوية تركات، وحاجات تقدر تعملها باستخدام الflexbox.
+### Center a div
+![Center a div meme](/centerDivMeme.jpg)
+من أقدم الmemes الي مرتبطة بالبرمجة هو ميم How to center a div.
+الميم دا كان مشهور جدا قبل الflexbox. ودا لان بمجرد ما الflexbox ظهر، والموضوع بقي سهل جدا.
+حرفيا محتاج تلت خواص بس.
+<Codeblock codeText={`.parent{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}`} language={"CSS"} />
+
+### Different Layouts for different devices without @media
+دا أهم استخدام للFlexbox وهو ان انت تقدر تعمل موقع متجاوب علي كل الشاشات. من غير ما تتعب نفسك وتستخدم اي `MediaQuery`.
+وهنرجع لأول حاجة انت شفتها في المقال دا
+
+<FlexboxEasy widthChanging={true} />
+ودا الCSS الي استخدمناه
+<Codeblock
+  language="css"
+  codeText={`.parent{
+  display:flex;
+  flex-wrap: wrap;
+}
+.parent > * {
+  min-width:0;
+}
+.input-name{
+  flex-basis: 20% ;
+  flex-grow: 1;
+}
+.input-email{
+  flex-basis: 30%;
+  flex-grow: 2;
+}
+.input-submit{
+  flex-basis: 20%; 
+  flex-grow: 1;
+}
+`}
+/>
+
+
+### Styled inputs
+الforms فيها عناصر كتير، وغالبا الشكل التقليدي ليها مش كويس، باستخدام الflexbox هتقدر تعمل اشكال أكتر تناسب الموقع بتاعك
+<StyledInput />
+
+### Media Object
+الmedia object بتبقي عبارة عن صورة، وجنبها كلام. حاجة بسيطة صح؟
+بس تقريبا مفيش موقع مش بيستخدمها من أول المواقع التجارية في الريفيوهات علي المنتجات، لحد Facebook في الكومنتات
+![Media](/MediaObject.png)
+. يعني دي حاجة مهمة جدا جدا. والي flexbox بيخليها بسيطة جدا جدا
+
+وهنا هسيبك تجرب تعملها في Codepen.
+<iframe height="407" style={{width: "100%"}}  src="https://codepen.io/mostafakamar2308/embed/KKBywvN?default-tab=css%2Cresult&editable=true" loading="lazy">
+</iframe>
+
 
 {/* <div dir="ltr" className="prose">
   <Sandpack tempelate="vanilla" theme={nightOwl}></Sandpack>
