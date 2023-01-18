@@ -10,6 +10,8 @@ import AlignContentFlex from "./FlexAlignContent.js";
 import Align from "./FlexAlign.js";
 import FlexGrow from "./FlexGrow.js"
 import FlexShrink from "./FlexShrink.js"
+import FlexBasis from "./FlexBasis.js"
+import FlexGap from "./FlexGap.js"
 import FlexGrowDifferently from "./FlexGrowDifferently.js"
 
 # السلام عليكم ورحمة الله
@@ -282,11 +284,65 @@ Flexbox من اسمه فيه كلمة Flex والي هي اختصار ل Flexibl
 الي بتعمله الخاصية دي انها بتشوف ايه الmain axis وتديلها حجم معين يناسب الmain axis.
 
 تقدر تجرب دا هنا:
-{/* !!!TODO Make Flex Basis Component */}
 
+<FlexBasis />
 
+## Gap
+دي خاصية بتحط مسافات بين العناصر، بس ... مفيش أكتر من كدا XD.
+<Codeblock codeText={`.parent{
+  gap: 5px | 5px 10px (row gap column gap)
+}`} language={"css"} />
 
+<FlexGap />
+بالمناسبة Gap مش بس موجودة في flexbox، موجودة كمان في الgrid.
 
+دلوقتي الحمد لله خلصنا شرح كل الي انت محتاج تعرفه في الflexbox عشان تقدر تستخدمه.
+احنا جبنا سيرة الgrid فوق، تعالي نعرف امتي نستخدم كل واحد منهم.
+
+## Flexbox Vs Grid
+انت تقدر تستخدم اي واحد منهم، عشان توصل للlayout الي انت عايزها.
+الاتنين وظيفتهم الاساسية انها تعمل صفحات متجاوبة علي كل الاجهزة. وعموما مفيش اجابة صح مطلق.
+بس القاعدة العامة هي
+`Flex for one dimensional simple layouts, Grid for multidimensional complex layouts`
+
+تعالي نفهم شوية، لو انت هتوزع العناصر بتاعتك في اتجاه واحد(يعني علي محور واحد) سواء بالطول او بالعرض
+يبقي الflexbox هيبقي خيار ممتاز.
+
+طب لو العناصر هنوزعها في علي كذا محور وهتبقي layout معقدة، يبقي الافضل اكيد اننا نستخدم الgrid.
+
+تعالي تفهم قصدي بالصور الجاية
+![Flex box Layout](/FlexBoxLayout.png)
+في الصورة الي فوق دي احنا شايفين ان العناصر كلها متوزعة علي المحور الافقي. يبقي أكيد الflexbox خيار ممتاز.
+
+بالمناسبة دا الكود عشان تعمل حاجة شبه كدا من غير استايل
+<Codeblock codeText={`<header>
+  <div>Logo</div>
+  <nav>
+    <a>Home</a>
+    <a>Articles</a>
+    <a>Contact</a>
+  </nav>
+</header>`} language={"HTML"}/>
+<Codeblock language={"CSS"} codeText={`header{
+  display: flex;
+}
+header > div {
+  flex-grow: 1;
+}
+nav{
+  display: flex;
+  gap: 20px;
+}
+`} />
+
+طب دلوقتي تعالي نشوف الصورة دي
+<figure>
+  <img loading={"lazy"} src="/grid-layouts.jpg" width="100%" height="auto" alt="figure alt text"/>
+  <figcaption className="text-center">
+	الصورة من <a href={"https://nicepage.com/feature/80-grid-layouts-447593"} target="_blank">هنا</a>
+  </figcaption>
+</figure>
+لو خدت بالك، هتلاقي ان الlayout بدأت تبقي معقدة، وبقي فيه أحجام مختلفة للعناصر. وكمان مش كل العناصر متوزعة علي نفسس المحور. بالتالي اGrid هيبقي أفضل هنا بكتير.
 
 {/* <div dir="ltr" className="prose">
   <Sandpack tempelate="vanilla" theme={nightOwl}></Sandpack>
