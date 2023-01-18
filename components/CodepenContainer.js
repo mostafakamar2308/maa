@@ -11,7 +11,8 @@ const CodePenContainer = ({ htmlCode, CssCode, jsCode, title }) => {
       embedHeight="300px"
       editable
       penTitle={title}
-      themeId={"24457"}
+      themeId={"31525"}
+      defaultTabs={["css", "result"]}
       head={
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       }

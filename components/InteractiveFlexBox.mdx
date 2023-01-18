@@ -127,11 +127,28 @@ Flexbox من اسمه فيه كلمة Flex والي هي اختصار ل Flexibl
   - column-reverse: ودي هتخلي الاتجاه عمودي، ويبدأ التوزيع من تحت لفوق
 </div>
 
-<iframe height="400" width="100%" scrolling="no" title="Flex Direction" src="https://codepen.io/mostafakamar2308/embed/WNKOBzP?default-tab=css%2Cresult&editable=true" frameBorder="no" loading="lazy" allowtransparency="true" allowFullScreenlscreen="true">
+{/* <iframe height="400" width="100%" scrolling="no" title="Flex Direction" src="https://codepen.io/mostafakamar2308/embed/WNKOBzP?default-tab=css%2Cresult&editable=true" frameBorder="no" loading="lazy" allowtransparency="true" allowFullScreenlscreen="true">
   See the Pen <a href="https://codepen.io/mostafakamar2308/pen/WNKOBzP">
   Untitled</a> by Mostafa Kamar (<a href="https://codepen.io/mostafakamar2308">@mostafakamar2308</a>)
   on <a href="https://codepen.io">CodePen</a>.
-</iframe>
+</iframe> */}
+<CodePenContainer htmlCode={`<div class="parent">
+	<div class="child">1</div>
+	<div class="child">2</div>
+	<div class="child">3</div>
+</div>`} CssCode={`.parent{
+	display:flex;
+	flex-direction: row;
+	/*row | row-reverse | column | column-reverse*/
+}
+/*حاجات عشان تظبط الشكل*/
+.child{
+	padding:2rem;
+	background-color: red;
+	margin: 1rem;
+	font-size: 2rem;
+	color:white;
+}`}></CodePenContainer>
 
 
 ## Justify Content
@@ -158,11 +175,29 @@ Flexbox من اسمه فيه كلمة Flex والي هي اختصار ل Flexibl
 ## Flex Wrap
 لو خدت بالك فالطبيعي ان العناصر الي موجودة جوا الFlex تحاول انها تبقي علي سطر واحد.
 فلنفترض ان العناصر بقي حجمها أكبر من الأب يبقي هيحصل overflow والتنسيق ساعتها هيبقي شكله مش كويس، أو ممكن كمان يحصل horizontal scroll bar،تعالي نشوف كدا قصدي علي ايه
-<iframe height="400" style={{width: "100%"}} scrolling="no" title="Flex Wrap" src="https://codepen.io/mostafakamar2308/embed/GRBvNLG?default-tab=css%2Cresult&editable=true" frameBorder="no" loading="lazy" allowtransparency="true" allowFullScreenlscreen="true">
+{/* <iframe height="400" style={{width: "100%"}} scrolling="no" title="Flex Wrap" src="https://codepen.io/mostafakamar2308/embed/GRBvNLG?default-tab=css%2Cresult&editable=true" frameBorder="no" loading="lazy" allowtransparency="true" allowFullScreenlscreen="true">
   See the Pen <a href="https://codepen.io/mostafakamar2308/pen/GRBvNLG">
   FlexWrap</a> by Mostafa Kamar (<a href="https://codepen.io/mostafakamar2308">@mostafakamar2308</a>)
   on <a href="https://codepen.io">CodePen</a>.
-</iframe>
+</iframe> */}
+<CodePenContainer htmlCode={`<div class="parent">
+	<div class="child">1</div>
+	<div class="child">2</div>
+	<div class="child">3</div>
+	<div class="child">4</div>
+	<div class="child">5</div>
+</div>`} CssCode={`.parent{
+	display:flex;
+}
+.child{
+	min-width:100px;
+	text-align: center;
+	line-height:100px;
+	background:red;
+	margin:1rem;
+	color:white;
+	font-size:3rem;
+}`}></CodePenContainer>
 
 عشان نحل المشكلة دي جرب تزود دا في الparent:
 
@@ -217,11 +252,33 @@ Flexbox من اسمه فيه كلمة Flex والي هي اختصار ل Flexibl
 }`} language={"CSS"} />
 
 ايه رأيك تجرب هنا زي ما متعودين؟
-<iframe height="406" style={{width: "100%"}} scrolling="no" title="Untitled" src="https://codepen.io/mostafakamar2308/embed/BaPdgzv?default-tab=css%2Cresult&editable=true" frameBorder="no" loading="lazy" allowtransparency="true" allowFullScreen="true">
+{/* <iframe height="406" style={{width: "100%"}} scrolling="no" title="Untitled" src="https://codepen.io/mostafakamar2308/embed/BaPdgzv?default-tab=css%2Cresult&editable=true" frameBorder="no" loading="lazy" allowtransparency="true" allowFullScreen="true">
   See the Pen <a href="https://codepen.io/mostafakamar2308/pen/BaPdgzv">
   Untitled</a> by Mostafa Kamar (<a href="https://codepen.io/mostafakamar2308">@mostafakamar2308</a>)
   on <a href="https://codepen.io">CodePen</a>.
-</iframe>
+</iframe> */}
+<CodePenContainer htmlCode={`<div class="parent">
+	<div class="child">1</div>
+	<div class="child">2</div>
+	<div class="child">3</div>
+</div>`} CssCode={`/*Add Align self*/
+.child:nth-child(1){
+	background: pink;
+	color: black;
+}
+/*Styling Don't bother with it*/
+.parent{
+	display:flex;
+	height:300px;
+	align-items: stretch;
+}
+.child{
+	padding:2rem;
+	background: purple;
+	font-size: 2rem;
+	color:white;
+}
+`}></CodePenContainer>
 
 ملحوظة مهمة جدا:
 خلي بالك ان لو ملقتش `align-self` شغالة يبقي غالبا لان العنصر واخد `margin: auto`، فالحل انك تدي العنصر اي قيمة للmargin وهتلاقي `align-self` اشتغلت تاني
@@ -234,11 +291,30 @@ Flexbox من اسمه فيه كلمة Flex والي هي اختصار ل Flexibl
 الخاصية دي بتاخد رقم، والقيمة الافتراضية ليها لكل العناصر بتبقي 0. فبما ان كل العناصر ليهم نفس القيمة فالطبيعي ان ترتيبهم 
 هيبقي شبه ترتيب الكتابة الاصلي.
 في المثال الجاي، انا عايزك تجرب تكتب اي رقم ييجي في دماغك.
-<iframe height="404" style={{width: "100%"}} scrolling="no" title="Untitled" src="https://codepen.io/mostafakamar2308/embed/OJwjKxN?default-tab=css%2Cresult&editable=true" frameBorder="no" loading="lazy" allowtransparency="true" allowFullScreen="true">
+{/* <iframe height="404" style={{width: "100%"}} scrolling="no" title="Untitled" src="https://codepen.io/mostafakamar2308/embed/OJwjKxN?default-tab=css%2Cresult&editable=true" frameBorder="no" loading="lazy" allowtransparency="true" allowFullScreen="true">
   See the Pen <a href="https://codepen.io/mostafakamar2308/pen/OJwjKxN">
   Untitled</a> by Mostafa Kamar (<a href="https://codepen.io/mostafakamar2308">@mostafakamar2308</a>)
   on <a href="https://codepen.io">CodePen</a>.
-</iframe>
+</iframe> */}
+<CodePenContainer htmlCode={`<div class="parent">
+	<div class="child">1</div>
+	<div class="child">2</div>
+	<div class="child">3</div>
+	<div class="child">4</div>
+</div>`} CssCode={`/*add any number to order*/
+.child:nth-child(2){
+	order: ;
+	background: purple;
+}
+.child{
+	padding: 2rem;
+	background: beige;
+	font-size: 2rem;
+}
+.parent{
+	display:flex;
+	gap:1rem;
+}`}></CodePenContainer>
 
 لو انت كتبت أي رقم اكبر من 0 هتلاقي ان العنصر الي لونه بنفسجي بقي في الاخر خالص، دا ليه بقي؟
 دا عشان كل العناصر واخده `order: 0` ولما هتدي للعنصر الي انت حابب تغيره اوردر اكبر من 0، يبقي الي هيحصل ان الاول هيظهر العناصر الي ترتيبها 0 بعدها العنصر بتاعك.
@@ -256,11 +332,27 @@ Flexbox من اسمه فيه كلمة Flex والي هي اختصار ل Flexibl
 <FlexGrow />
 طب احنا عرفنا ان ال`flex-grow` قيمتها الافتراضية 0، طب لو خليناها 1 لكل العناصر جوا الflexbox، هيحصل ايه؟
 جرب تضيف `flex-grow: 1;` جوا الchild وشوف هيبقي زي مانت متوقع ولا ايه؟
-<iframe height="300" style={{width: "100%"}} scrolling="no" title="Untitled" src="https://codepen.io/mostafakamar2308/embed/zYLdggb?default-tab=css%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowFullScreen="true">
+{/* <iframe height="300" style={{width: "100%"}} scrolling="no" title="Untitled" src="https://codepen.io/mostafakamar2308/embed/zYLdggb?default-tab=css%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowFullScreen="true">
   See the Pen <a href="https://codepen.io/mostafakamar2308/pen/zYLdggb">
   Untitled</a> by Mostafa Kamar (<a href="https://codepen.io/mostafakamar2308">@mostafakamar2308</a>)
   on <a href="https://codepen.io">CodePen</a>.
-</iframe>
+</iframe> */}
+<CodePenContainer htmlCode={`<div class="parent">
+	<div class="child">1</div>
+	<div class="child">2</div>
+	<div class="child">3</div>
+</div>`} CssCode={`.parent{
+	display: flex;
+}
+/*Add Flex-grow*/
+.child{
+	padding: .5rem;
+	background: purple;
+	color:white;
+	border:2px solid green;
+	font-size: 2rem;
+	text-align:center;
+}`}></CodePenContainer>
 
 طب ايه الي هيحصل لو انت اديت اكتر من عنصر `flex-grow`.
 
@@ -400,8 +492,20 @@ nav{
 . يعني دي حاجة مهمة جدا جدا. والي flexbox بيخليها بسيطة جدا جدا
 
 وهنا هسيبك تجرب تعملها في Codepen.
-<iframe height="407" style={{width: "100%"}}  src="https://codepen.io/mostafakamar2308/embed/KKBywvN?default-tab=css%2Cresult&editable=true" loading="lazy">
-</iframe>
+{/* <iframe height="407" style={{width: "100%"}}  src="https://codepen.io/mostafakamar2308/embed/KKBywvN?default-tab=css%2Cresult&editable=true" loading="lazy">
+</iframe> */}
+
+<CodePenContainer  htmlCode={`<div>
+	<div>
+	<img src="https://cdn.shopify.com/s/files/1/0416/1191/9514/collections/ippo_2a_1200x1200.jpg?v=1595531070" alt="Ippo Makunochi" width="60" />
+	</div>
+	<div>
+		<h3>Makunochi Ippo</h3>
+		<p>
+			I am Makunochi Ippo, I want to be strong
+		</p>
+	</div>
+</div>`} CssCode={`/*Create the styles of the media object here */`}  title="Test"></CodePenContainer>
 
 
 {/* <div dir="ltr" className="prose">
