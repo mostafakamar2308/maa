@@ -9,6 +9,7 @@ module.exports = {
       fontFamily: {
         aref: ["Aref Ruqaa", "sans-serif"],
         noto: ["Noto Naskh Arabic", "serif"],
+        cousin: ["Cousine", "monospace"],
       },
       colors: {
         lightText: "#145952",

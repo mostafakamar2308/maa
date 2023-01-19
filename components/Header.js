@@ -4,12 +4,16 @@ import sun from "../assets/sun.svg";
 import moon from "../assets/moon.svg";
 import { useContext } from "react";
 import { themeContext } from "../context/context";
+import useSound from "use-sound";
 
 const Header = () => {
   const { theme, setTheme } = useContext(themeContext);
+  const [play] = useSound("/sounds/click.mp3");
   const changeTheme = () => {
+    play();
     theme === "light" ? setTheme("dark") : setTheme("light");
   };
+
   return (
     <header className="flex justify-between md:p-8 py-4 px-2 items-center">
       <h1 className="font-aref text-3xl">
