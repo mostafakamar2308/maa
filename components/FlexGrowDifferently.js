@@ -14,7 +14,7 @@ const FlexGrowDifferently = () => {
       <div className="flex border p-2">
         <div
           style={{ flexGrow: flexGrow1 }}
-          className="border border-green-400 p-1"
+          className="border border-green-400 p-1 duration-300"
         >
           <p>قيمة flex-grow عندي = {flexGrow1}</p>
           <p>
@@ -33,7 +33,7 @@ const FlexGrowDifferently = () => {
         </div>
         <div
           style={{ flexGrow: flexGrow2 }}
-          className="border border-green-400 p-1"
+          className="border border-green-400 p-1 duration-300"
         >
           <p>قيمة flex-grow عندي = {flexGrow2}</p>
           <p>

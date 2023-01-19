@@ -1,10 +1,10 @@
 import BestArticle from "./Best Article";
 import NewsForm from "./NewsLetterForm";
 
-const Intro = () => {
+const Intro = ({ bestPost }) => {
   return (
     <section className="lg:text-3xl text-xl md:p-8 flex flex-wrap md:flex-nowrap gap-8 w-screen">
-      <div className="lg:w-1/2 w-screen md:p-4 p-2">
+      <div className=" grow w-screen md:p-4 p-2">
         <div>
           <div className="lg:leading-9">
             <h2>
@@ -17,9 +17,9 @@ const Intro = () => {
               <span className="text-red-500 font-aref lg:text-3xl text-2xl mx-2">
                 مدارج البرمجة
               </span>{" "}
-              هي مدونة تسعي الي رفع كفاءة مطور الويب العربي، عن طريق شرح أهم
-              التقنيات، المفاهيم والاستخدامات الواقعية، بالاضافة الي توفير أحدث
-              أسئلة المقابلات الشخصية مع شرحها شرحا وافيا.
+              هي مدونة تسعي الي رفع كفاءة المطور العربي، عن طريق شرح المفاهيم
+              والتقنيات وكيفية استخدامها علي أرض الواقع بطريقة تفاعلية باللغة
+              العربية{" "}
             </p>
           </div>
           <div className="text-base mt-4">
@@ -31,9 +31,11 @@ const Intro = () => {
           </div>
         </div>
       </div>
-      <div className="m-2">
-        <h2 className="font-bold text-2xl mb-2">أفضل المقالات</h2>
-        <BestArticle />
+      <div className="m-2 lg:block flex flex-col items-center">
+        <h2 className="font-bold text-2xl mb-2 self-start">أفضل المقالات</h2>
+        <div className="mx-auto lg:m-0">
+          <BestArticle post={bestPost} />
+        </div>
       </div>
     </section>
   );

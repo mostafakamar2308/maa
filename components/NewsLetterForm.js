@@ -25,7 +25,7 @@ const NewsForm = () => {
   };
   return (
     <form
-      className={`flex lg:gap-2 border justify-between items-center rounded-xl text-lg lg:text-2xl ${
+      className={`flex lg:gap-2 w-11/12 mt-2 border justify-between items-center rounded-xl text-lg lg:text-2xl ${
         theme === "light" ? " border-black" : " border-white"
       }`}
       onSubmit={submitUser}
@@ -36,7 +36,7 @@ const NewsForm = () => {
           name="name"
           required
           onChange={setUser}
-          className="bg-transparent md:w-[30%] focus:outline-none border-b-[#333] border-b-2 w-4/5 md:border-none"
+          className="bg-transparent grow md:w-[30%] focus:outline-none border-b-[#333] border-b-2 w-4/5 md:border-none"
         />
         <span
           className={`h-[30px] w-[1px] md:inline-block hidden ${

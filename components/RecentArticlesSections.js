@@ -3,7 +3,8 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Link from "next/link";
 
-const RecentSection = () => {
+const RecentSection = ({ recentPosts }) => {
+  const recent = recentPosts.post;
   const responsive = {
     desktop: {
       breakpoint: { max: 4000, min: 768 },
@@ -28,8 +29,9 @@ const RecentSection = () => {
           rtl={true}
           itemClass="rounded-lg overflow-hidden md:mx-5 md:min-w-[450px] md:h-[250px] p-2 md:p-0 w-screen h-full"
         >
-          <RecentArticle />
-          <RecentArticle />
+          {recent.map((post) => (
+            <RecentArticle key={post._id} post={post} />
+          ))}
         </Carousel>
       </div>
       <div className="flex justify-center gap-x-8">

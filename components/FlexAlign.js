@@ -12,7 +12,7 @@ const AlignItems = () => {
   return (
     <div className="flex border p-2 rounded-lg flex-col gap-2 relative">
       <div
-        className={`flex ${alignItemsVal} ${alignContentVal} flex-wrap border p-1 h-[400px]  [&>*]:p-10 [&>*]:bg-emerald-700 [&>*]:border [&>*]:border-white [&>*]:text-2xl [&>*]:rounded-md`}
+        className={`flex [&>*]:duration-300 ${alignItemsVal} ${alignContentVal} flex-wrap border p-1 h-[400px]  [&>*]:p-10 [&>*]:bg-emerald-700 [&>*]:border [&>*]:border-white [&>*]:text-2xl [&>*]:rounded-md`}
       >
         <div>1</div>
         <div>2</div>

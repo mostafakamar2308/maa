@@ -5,7 +5,10 @@ const CodeBlock = ({ codeText, language }) => {
       <div className="text-white absolute bg-[#090b11] p-2 rounded-t-lg right-0 -top-5">
         {language.toUpperCase()}
       </div>
-      <Highlight className={`language-${language} w-11/12 text-lg `}>
+      <Highlight
+        language={language}
+        className={`language-${language} w-11/12 text-lg `}
+      >
         {codeText}
       </Highlight>
     </div>

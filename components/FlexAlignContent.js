@@ -8,7 +8,7 @@ const AlignContent = ({ axis }) => {
   return (
     <div className="flex border p-2  rounded-lg flex-col gap-2">
       <div
-        className={`flex h-[500px]  ${alignContentVal} border p-1 flex-wrap [&>*]:p-10 [&>*]:bg-emerald-700 [&>*]:border [&>*]:border-white [&>*]:text-2xl [&>*]:rounded-md`}
+        className={`flex h-[500px] [&>*]:duration-300  ${alignContentVal} border p-1 flex-wrap [&>*]:p-10 [&>*]:bg-emerald-700 [&>*]:border [&>*]:border-white [&>*]:text-2xl [&>*]:rounded-md`}
       >
         <div>1</div>
         <div>2</div>

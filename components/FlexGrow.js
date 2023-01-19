@@ -9,7 +9,9 @@ const FlexGrow = () => {
   return (
     <div className="border p-2">
       <div className="flex [&>*]:bg-orange-500 [&>*]:p-4 gap-2 border p-1 [&>*]:text-black [&>*]:rounded-md">
-        <div className={`!bg-gray-700 !text-white ${flexGrow}`}>1</div>
+        <div className={`!bg-gray-700 !text-white ${flexGrow} duration-500`}>
+          1
+        </div>
         <div>2</div>
         <div>3</div>
         <div>4</div>
