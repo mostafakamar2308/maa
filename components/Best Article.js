@@ -10,29 +10,29 @@ const BestArticle = ({ post }) => {
   const { theme } = useContext(themeContext);
   return (
     <div
-      className={`lg:max-w-3/4 w-5/6 h-[350px] mx-auto md:mx-0 border rounded-lg relative ${
+      className={`grid grid-rows-[50%,50%] md:w-2/3 w-4/5 min-h-[500px] md:min-h-[450px] lg:min-h-[350px] mx-auto md:mx-0 border rounded-lg relative ${
         theme === "light"
           ? " border-black bg-darkButtonUnimportantColor text-white"
           : "border-white bg-lightCodeBackground text-lightCodeText"
       }`}
     >
-      <div className="h-1/2">
+      <div>
         <Image
           layout="fill"
-          src={postDetails.imgSrc || "/MediaObject.png"}
+          src={postDetails.imgSrc}
           alt="Article Image"
           className="object-cover w-full object-center !h-1/2 rounded-t-lg "
         />
       </div>
 
-      <div className="h-1/2 p-2 flex flex-col justify-between">
+      <div className="p-2 flex flex-col justify-between">
         <div>
           <Link href={`/articles/${postDetails.slug}`}>
-            <h2 className="text-2xl">{postDetails.title}</h2>
+            <h2 className="md:text-xl text-2xl">{postDetails.title}</h2>
           </Link>
-          <p className="text-md md:text-lg">{postDetails.description}</p>
+          <p className="text-base">{postDetails.description}</p>
         </div>
-        <div className=" text-sm text-left">
+        <div className="text-sm text-left">
           {moment(postDetails.createdAt).format("YYYY-MM-DD")}
         </div>
       </div>

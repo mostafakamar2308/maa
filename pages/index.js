@@ -48,5 +48,6 @@ export async function getStaticProps() {
       bestPost: JSON.parse(JSON.stringify(bestPost)),
       recentPosts: JSON.parse(JSON.stringify(posts.slice(0, 3))),
     },
+    revalidate: 10,
   };
 }

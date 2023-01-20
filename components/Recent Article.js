@@ -13,7 +13,9 @@ const RecentArticle = ({ post }) => {
       />
       <div className="z-10 flex flex-col justify-between w-[80%] md:h-[50%] rounded-2xl text-black h-[80%]  p-2 bg-[rgba(255,255,255,.8)]">
         <Link href={`/articles/${post.slug}`}>
-          <h3 className="text-2xl font-bold text-right m-4">{post.title}</h3>
+          <h3 className="md:text-2xl text-xl font-bold text-right m-4">
+            {post.title}
+          </h3>
         </Link>
         <p className="text-left">
           {moment(post.createdAt).format("YYYY-MM-DD")}

@@ -5,7 +5,6 @@ import InteractiveGuide from "../../components/InteractiveFlexBox.mdx";
 import { themeContext } from "../../context/context";
 
 export default function InteractiveFlexBoxGuide() {
-  const router = useRouter();
   const { theme } = useContext(themeContext);
   return (
     <div>

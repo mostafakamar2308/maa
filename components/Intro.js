@@ -3,8 +3,8 @@ import NewsForm from "./NewsLetterForm";
 
 const Intro = ({ bestPost }) => {
   return (
-    <section className="lg:text-3xl text-xl md:p-8 flex flex-wrap md:flex-nowrap gap-8 w-screen">
-      <div className=" grow w-screen md:p-4 p-2">
+    <section className="lg:text-3xl text-xl md:p-8 flex flex-wrap mx-auto justify-center lg:flex-nowrap gap-8 w-fit">
+      <div className=" w-screen md:p-4 p-2">
         <div>
           <div className="lg:leading-9">
             <h2>
@@ -31,11 +31,9 @@ const Intro = ({ bestPost }) => {
           </div>
         </div>
       </div>
-      <div className="m-2 lg:block flex flex-col items-center">
+      <div className="m-2 w-fit mx-auto lg:block flex flex-col items-center">
         <h2 className="font-bold text-2xl mb-2 self-start">أفضل المقالات</h2>
-        <div className="mx-auto lg:m-0">
-          <BestArticle post={bestPost} />
-        </div>
+        <BestArticle post={bestPost} />
       </div>
     </section>
   );

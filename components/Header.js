@@ -15,7 +15,7 @@ const Header = () => {
   };
 
   return (
-    <header className="flex justify-between md:p-8 py-4 px-2 items-center">
+    <header className="flex justify-between md:p-4 py-4 px-2 items-center border-b ">
       <h1 className="font-aref text-3xl">
         <Link href={"/"}>مدارج البرمجة</Link>
       </h1>
