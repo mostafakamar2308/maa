@@ -4,7 +4,7 @@ import "react-multi-carousel/lib/styles.css";
 import Link from "next/link";
 
 const RecentSection = ({ recentPosts }) => {
-  const recent = recentPosts.post;
+  const recent = recentPosts;
   const responsive = {
     desktop: {
       breakpoint: { max: 4000, min: 768 },

@@ -6,7 +6,7 @@ import Link from "next/link";
 import moment from "moment";
 
 const BestArticle = ({ post }) => {
-  const postDetails = post.post;
+  const postDetails = post;
   const { theme } = useContext(themeContext);
   return (
     <div
@@ -19,7 +19,7 @@ const BestArticle = ({ post }) => {
       <div className="h-1/2">
         <Image
           layout="fill"
-          src={postDetails.imgSrc}
+          src={postDetails.imgSrc || "/MediaObject.png"}
           alt="Article Image"
           className="object-cover w-full object-center !h-1/2 rounded-t-lg "
         />

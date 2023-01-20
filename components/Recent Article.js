@@ -3,12 +3,11 @@ import Link from "next/link";
 import arrow from "../assets/arrow.svg";
 import moment from "moment";
 const RecentArticle = ({ post }) => {
-  console.log(post);
   return (
     <div className="relative flex items-center justify-around md:min-w-[450px] md:min-h-[250px] h-[150px] rounded-lg overflow-hidden">
       <Image
         fill
-        src={post.imgSrc}
+        src={post.imgSrc || "/MediaObject.png"}
         alt={post.title}
         className="absolute object-cover md:w-[450px] md:h-[250px] z-0 w-screen h-full top-0"
       />
