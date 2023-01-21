@@ -9,6 +9,7 @@ const Articles = ({ articles }) => {
     <div className="flex flex-wrap w-screen lg:m-4 my-4">
       <Head>
         <title>مقالات | مدارج البرمجة </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <div className="flex flex-wrap justify-center w-full">
         {articles.map((article) => (

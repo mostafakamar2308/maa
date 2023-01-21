@@ -13,6 +13,7 @@ export default function Home({ bestPost, recentPosts }) {
     <div>
       <Head>
         <title>مدارج البرمجة</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
           content="مدارج البرمجة، هي مدونة تفاعلية، تسعي الي رفع كفاءة المطور العربي، عن طريق شرح التقنيات والمفاهيم بطريقة تفاعلية وباللغة العربية"

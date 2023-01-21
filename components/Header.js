@@ -36,18 +36,6 @@ const Header = () => {
         >
           مقالات
         </Link>
-        <a
-          href="https://www.youtube.com/@Madareg_El_Programming"
-          target={"_blank"}
-          rel="noreferrer"
-          className={
-            theme === "light"
-              ? " transition-all	 hover:text-black"
-              : " transition-all	hover:text-white"
-          }
-        >
-          قناة اليوتيوب
-        </a>
         <Link
           href="#contact"
           className={
