@@ -1,5 +1,5 @@
 import Header from "./Header";
-import Footer from "./Who";
+import Footer from "./Footer";
 import { useContext } from "react";
 import { themeContext } from "../context/context";
 

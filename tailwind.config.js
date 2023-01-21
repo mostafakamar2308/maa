@@ -6,6 +6,13 @@ module.exports = {
   ],
   theme: {
     extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            maxWidth: "100%",
+          },
+        },
+      },
       fontFamily: {
         aref: ["Aref Ruqaa", "sans-serif"],
         noto: ["Noto Naskh Arabic", "serif"],

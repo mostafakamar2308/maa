@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ArrowHorizontal from "./arrow-horizontal";
+import ArrowHorizontal from "../arrow-horizontal";
 
 const AlignItems = ({ axis }) => {
   const [alignItemsVal, setAlignItemsVal] = useState("items-stretch");

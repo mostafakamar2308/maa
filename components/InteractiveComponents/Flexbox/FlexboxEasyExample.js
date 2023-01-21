@@ -1,6 +1,6 @@
 import { useState } from "react";
-import ArrowHorizontal from "./arrow-horizontal";
-import ArrowVertical from "./arrow-vertical";
+import ArrowHorizontal from "../arrow-horizontal";
+import ArrowVertical from "../arrow-vertical";
 
 const FlexBoxEasy = ({ widthChanging, AxisExplain }) => {
   const [width, setWidth] = useState(700);

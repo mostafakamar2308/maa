@@ -1,6 +1,6 @@
 import { useState } from "react";
-import ArrowHorizontal from "./arrow-horizontal";
-import ArrowVertical from "./arrow-vertical";
+import ArrowHorizontal from "../arrow-horizontal";
+import ArrowVertical from "../arrow-vertical";
 
 const FlexDirectionExample = () => {
   const [axis, setAxis] = useState("horizontal");
