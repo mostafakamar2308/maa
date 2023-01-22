@@ -5,8 +5,10 @@ import moon from "../assets/moon.svg";
 import { useContext } from "react";
 import { themeContext } from "../context/context";
 import useSound from "use-sound";
+import menuLight from "../assets/menu-light.svg";
+import menuDark from "../assets/menu-dark.svg";
 
-const Header = () => {
+const Header = ({ changeMobNav }) => {
   const { theme, setTheme } = useContext(themeContext);
   const [play] = useSound("/sounds/click.mp3");
   const changeTheme = () => {
@@ -15,11 +17,11 @@ const Header = () => {
   };
 
   return (
-    <header className="flex justify-between md:p-4 py-4 px-2 items-center border-b ">
+    <header className="flex justify-between md:p-4  p-2 items-center border-b ">
       <h1 className="font-aref text-3xl">
         <Link href={"/"}>مدارج البرمجة</Link>
       </h1>
-      <div
+      <nav
         className={
           theme === "light"
             ? "md:flex justify-center gap-8 text-xl hidden text-lightText"
@@ -46,8 +48,18 @@ const Header = () => {
         >
           تواصل معي
         </Link>
+      </nav>
+      <div className="md:hidden translate-y-2">
+        <button onClick={() => changeMobNav((prev) => !prev)}>
+          {" "}
+          <Image
+            src={theme === "light" ? menuLight : menuDark}
+            alt="icon"
+            width={50}
+            height={50}
+          />
+        </button>
       </div>
-
       <div className="hidden lg:block">
         <button onClick={changeTheme}>
           <Image
