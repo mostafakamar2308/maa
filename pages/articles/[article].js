@@ -18,6 +18,27 @@ const Article = ({ post }) => {
       <Head>
         <title>{post.title}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="title" content={post.title} />
+        <meta name="description" content={post.description} />
+        {/* Facebook meta tags */}
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content={`https://www.madaregprogramming.live/articles/${post.slug}`}
+        />
+        <meta property="og:title" content={post.title} />
+        <meta property="og:description" content={post.description} />
+        <meta property="og:image" content={post.imgSrc} />
+        {/* Twitter meta tags */}
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:url"
+          content={`https://www.madaregprogramming.live/articles/${post.slug}`}
+        />
+        <meta property="twitter:title" content={post.title} />
+        <meta property="twitter:description" content={post.description} />
+        <meta property="twitter:image" content={post.imgSrc} />
       </Head>
       <div className="my-4">
         <h1 className="text-3xl border-b inline-block pl-8 pb-2">

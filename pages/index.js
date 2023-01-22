@@ -18,6 +18,35 @@ export default function Home({ bestPost, recentPosts }) {
           name="description"
           content="مدارج البرمجة، هي مدونة تفاعلية، تسعي الي رفع كفاءة المطور العربي، عن طريق شرح التقنيات والمفاهيم بطريقة تفاعلية وباللغة العربية"
         />
+        <meta name="title" content={`مقالات | مدارج البرمجة`} />
+
+        {/* Facebook meta tags */}
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content={`https://www.madaregprogramming.live`}
+        />
+        <meta property="og:title" content={`مدارج البرمجة`} />
+        <meta
+          property="og:description"
+          content={
+            "مدارج البرمجة هي مدونة تسعي الي رفع كفاءة المطور العربي، عن طريق شرح المفاهيم والتقنيات وكيفية استخدامها علي أرض الواقع بطريقة تفاعلية باللغة العربية"
+          }
+        />
+        {/* Twitter meta tags */}
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:url"
+          content={`https://www.madaregprogramming.live/articles`}
+        />
+        <meta property="twitter:title" content={`مدارج البرمجة`} />
+        <meta
+          property="twitter:description"
+          content={
+            "مدارج البرمجة هي مدونة تسعي الي رفع كفاءة المطور العربي، عن طريق شرح المفاهيم والتقنيات وكيفية استخدامها علي أرض الواقع بطريقة تفاعلية باللغة العربية"
+          }
+        />
       </Head>
       <div>
         <Intro bestPost={bestPost} />
