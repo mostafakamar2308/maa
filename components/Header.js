@@ -12,8 +12,12 @@ const Header = ({ changeMobNav }) => {
   const { theme, setTheme } = useContext(themeContext);
   const [play] = useSound("/sounds/click.mp3");
   const changeTheme = () => {
-    play();
-    theme === "light" ? setTheme("dark") : setTheme("light");
+    try {
+      play();
+      theme === "light" ? setTheme("dark") : setTheme("light");
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   return (
@@ -39,7 +43,7 @@ const Header = ({ changeMobNav }) => {
           مقالات
         </Link>
         <Link
-          href="#contact"
+          href="/#contact"
           className={
             theme === "light"
               ? " transition-all	 hover:text-black"

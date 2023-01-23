@@ -2,7 +2,7 @@ import dbConnect from "../../lib/dbConnect";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 import { fetchSpecificArticle } from "../../lib/FetchSpecificArticle";
-import { useContext, useState } from "react";
+import { useContext, useMemo, useState } from "react";
 import { themeContext } from "../../context/context";
 import LikesComponent from "../../components/LikesComponent";
 import moment from "moment";
@@ -10,9 +10,11 @@ import moment from "moment";
 const Article = ({ post }) => {
   const [likes, setLikes] = useState(post.likes);
   const { theme } = useContext(themeContext);
-  const DynamicMdx = dynamic(() =>
-    import(`../../components/mdxFolder/${post.slug}.mdx`)
-  );
+
+  const DynamicMdx = useMemo(() => {
+    return dynamic(() => import(`../../components/mdxFolder/${post.slug}.mdx`));
+  }, [post.slug]);
+  console.log(DynamicMdx);
   return (
     <div className="lg:p-8 p-2 py-8">
       <Head>

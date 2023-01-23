@@ -7,8 +7,9 @@ const RecentArticle = ({ post }) => {
     <div className="relative flex items-center justify-around md:min-w-[450px] md:min-h-[250px] h-[150px] rounded-lg overflow-hidden">
       <Image
         fill
-        src={post.imgSrc || "/MediaObject.png"}
+        src={post.imgSrc}
         alt={post.title}
+        priority
         className="absolute object-cover md:w-[450px] md:h-[250px] z-0 w-screen h-full top-0"
       />
       <div className="z-10 flex flex-col justify-between w-[80%] md:h-[50%] rounded-2xl text-black h-[80%]  p-2 bg-[rgba(255,255,255,.8)]">

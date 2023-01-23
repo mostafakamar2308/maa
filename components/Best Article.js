@@ -16,12 +16,13 @@ const BestArticle = ({ post }) => {
           : "border-white bg-lightCodeBackground text-lightCodeText"
       }`}
     >
-      <div>
+      <div className="relative">
         <Image
-          layout="fill"
           src={postDetails.imgSrc}
+          fill
+          priority="true"
           alt="Article Image"
-          className="object-cover w-full object-center !h-1/2 rounded-t-lg "
+          className="object-cover w-full object-center rounded-t-lg "
         />
       </div>
 

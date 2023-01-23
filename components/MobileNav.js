@@ -49,7 +49,7 @@ const MobileNav = ({ changeMobNav }) => {
             مقالات
           </Link>
           <Link
-            href="#contact"
+            href="/#contact"
             className={
               theme === "light"
                 ? " transition-all	 hover:text-black"
