@@ -6,9 +6,7 @@ const CodeBlock = ({ codeText, language }) => {
   return (
     <div dir="ltr" className="relative mt-8">
       <div
-        className={`text-white font-cousin absolute  p-2 rounded-t-lg right-0 -top-8 ${
-          theme === "dark" ? "bg-[#090b11]" : "bg-[#1f2937]"
-        }`}
+        className={`text-white font-cousin absolute  p-2 rounded-t-lg bg-[#1e1e22] right-0 -top-8 `}
       >
         {language.toUpperCase()}
       </div>
