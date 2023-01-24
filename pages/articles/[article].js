@@ -16,7 +16,6 @@ const Article = ({ post }) => {
   const DynamicMdx = useMemo(() => {
     return dynamic(() => import(`../../components/mdxFolder/${post.slug}.mdx`));
   }, [post.slug]);
-  console.log(DynamicMdx);
   return (
     <div className="lg:p-8 p-2 py-8">
       <Head>
@@ -59,7 +58,7 @@ const Article = ({ post }) => {
       </div>
       <div className="md:flex text-white !w-screen overflow-hidden relative">
         <div
-          className={`prose lg:w-2/3 ${
+          className={`prose lg:w-2/3 xl:text-xl ${
             theme === "dark" ? "prose-invert" : ""
           } `}
         >
