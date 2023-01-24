@@ -21,7 +21,7 @@ const RecentSection = ({ recentPosts }) => {
   };
   return (
     <section className="p-8">
-      <h2 className="text-2xl font-bold">أحدث المقالات</h2>
+      <h2 className="text-3xl text-center font-bold">أحدث المقالات</h2>
       <div className="py-8">
         <Carousel
           responsive={responsive}
@@ -41,14 +41,6 @@ const RecentSection = ({ recentPosts }) => {
         >
           تصفح المقالات
         </Link>
-        <a
-          href="https://www.youtube.com/@Madareg_El_Programming"
-          target={"_blank"}
-          rel="noreferrer"
-          className="md:py-4 md:px-2 bg-darkSelectionBackground text-black border-darkBackground border p-2 text-white rounded-lg md:text-xl text-lg text-center"
-        >
-          قناة اليوتيوب
-        </a>
       </div>
     </section>
   );
