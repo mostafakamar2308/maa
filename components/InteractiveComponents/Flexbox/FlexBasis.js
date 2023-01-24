@@ -10,9 +10,9 @@ const FlexBasis = () => {
     setDirection(e.target.value);
   };
   return (
-    <div>
+    <div className="border-lightText rounded-md border p-2">
       <div
-        className={`flex ${direction} [&>*]:bg-orange-600 gap-2 [&>*]:p-4 h-[400px] border p-2`}
+        className={`flex ${direction} border-lightText rounded-md [&>*]:bg-orange-600 gap-2 [&>*]:p-4 h-[400px] border p-2`}
       >
         <div className="!bg-slate-400" style={{ flexBasis: `${basis}px` }}>
           1

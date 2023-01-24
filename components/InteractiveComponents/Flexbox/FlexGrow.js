@@ -7,8 +7,8 @@ const FlexGrow = () => {
     setFlexGrow(e.target.value);
   };
   return (
-    <div className="border p-2">
-      <div className="flex [&>*]:bg-orange-500 [&>*]:p-4 gap-2 border p-1 [&>*]:text-black [&>*]:rounded-md">
+    <div className="border p-2 border-lightText rounded-md">
+      <div className="flex [&>*]:bg-orange-500 border-lightText rounded-md [&>*]:p-4 gap-2 border p-1 [&>*]:text-black [&>*]:rounded-md">
         <div className={`!bg-gray-700 !text-white ${flexGrow} duration-500`}>
           1
         </div>

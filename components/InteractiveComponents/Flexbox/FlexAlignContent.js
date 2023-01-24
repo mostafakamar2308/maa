@@ -8,7 +8,7 @@ const AlignContent = ({ axis }) => {
   return (
     <div className="flex border p-2  rounded-lg flex-col gap-2">
       <div
-        className={`flex h-[500px] [&>*]:duration-300  ${alignContentVal} border p-1 flex-wrap [&>*]:p-10 [&>*]:bg-emerald-700 [&>*]:border [&>*]:border-white [&>*]:text-2xl [&>*]:rounded-md`}
+        className={`flex bg-darkButtonUnimportantColor rounded-md h-[500px] [&>*]:duration-300 [&>*]:text-white  ${alignContentVal} border p-1 flex-wrap md:[&>*]:p-10 [&>*]:p-4 [&>*]:bg-emerald-700 [&>*]:border [&>*]:border-white [&>*]:text-2xl [&>*]:rounded-md`}
       >
         <div>1</div>
         <div>2</div>
@@ -24,7 +24,7 @@ const AlignContent = ({ axis }) => {
       <div className="px-2">
         <select
           defaultValue={"content-stretch"}
-          className="p-1 rounded-md"
+          className="p-1 rounded-md text-white"
           onChange={changeAlignContent}
         >
           <option value={"content-start"}>flex-start</option>

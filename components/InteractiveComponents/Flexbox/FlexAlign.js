@@ -12,7 +12,7 @@ const AlignItems = () => {
   return (
     <div className="flex border p-2 rounded-lg flex-col gap-2 relative">
       <div
-        className={`flex [&>*]:duration-300 ${alignItemsVal} ${alignContentVal} flex-wrap border p-1 h-[400px]  [&>*]:p-10 [&>*]:bg-emerald-700 [&>*]:border [&>*]:border-white [&>*]:text-2xl [&>*]:rounded-md`}
+        className={`flex bg-darkButtonUnimportantColor rounded-md [&>*]:text-white [&>*]:duration-300 ${alignItemsVal} ${alignContentVal} flex-wrap border p-1 h-[400px]  md:[&>*]:p-10 [&>*]:p-4 [&>*]:bg-emerald-700 [&>*]:border [&>*]:border-white [&>*]:text-2xl [&>*]:rounded-md`}
       >
         <div>1</div>
         <div>2</div>
@@ -30,7 +30,7 @@ const AlignItems = () => {
           <div className="text-sm">Align-Items</div>
           <select
             defaultValue={"items-stretch"}
-            className="p-1 rounded-md"
+            className="p-1 rounded-md text-white"
             onChange={changeAlignItems}
           >
             <option value={"items-start"}>flex-start</option>
@@ -44,7 +44,7 @@ const AlignItems = () => {
           <div className="text-sm">Align-Content</div>
           <select
             defaultValue={"content-stretch"}
-            className="p-1 rounded-md"
+            className="p-1 rounded-md text-white"
             onChange={changeAlignContent}
           >
             <option value={"content-start"}>flex-start</option>

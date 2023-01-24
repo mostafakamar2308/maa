@@ -55,7 +55,7 @@ const NewsForm = () => {
       <button
         onClick={submitUser}
         type="submit"
-        className="bg-darkSelectionBackground border-darkBackground border-r text-darkBackground md:p-2 rounded-xl md:rounded-tr-none md:rounded-br-none p-4"
+        className="bg-darkSelectionBackground self-stretch border-darkBackground border-r hover:bg-lightEmphasizeText duration-300 text-darkBackground md:p-2 rounded-xl md:rounded-tr-none md:rounded-br-none p-4"
       >
         اشترك
       </button>

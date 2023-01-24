@@ -11,7 +11,7 @@ const FlexGrowDifferently = () => {
   };
   return (
     <div>
-      <div className="flex border p-2">
+      <div className="flex border p-2 border-lightText rounded-md">
         <div
           style={{ flexGrow: flexGrow1 }}
           className="border border-green-400 p-1 duration-300"

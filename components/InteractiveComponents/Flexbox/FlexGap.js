@@ -6,9 +6,9 @@ const FlexGap = () => {
     setGap(e.target.value);
   };
   return (
-    <div className="border p-2">
+    <div className="border p-2 border-lightText rounded-md">
       <div
-        className="flex border p-2 [&>*]:rounded-md [&>*]:p-4 [&>*]:bg-cyan-700 "
+        className="flex border border-lightText rounded-md p-2 [&>*]:rounded-md text-white [&>*]:p-4 [&>*]:bg-cyan-700 "
         style={{ gap: `${gap}px` }}
       >
         <div>1</div>

@@ -11,12 +11,12 @@ const AlignItems = ({ axis }) => {
     setJustifyContentVal(e.target.value);
   };
   return (
-    <div className="flex border p-2 rounded-lg flex-col gap-2 relative">
+    <div className="flex border p-2   rounded-lg flex-col gap-2 relative">
       <ArrowHorizontal text={"Main Axis"} />
       <div
         className={`flex ${
           axis === "column" ? "flex-col" : "flex-row"
-        } ${alignItemsVal} ${JustifyContentVal} border p-1 h-[400px]  [&>*]:p-4 [&>*]:bg-emerald-700 [&>*]:border [&>*]:border-white [&>*]:text-2xl [&>*]:rounded-md`}
+        } ${alignItemsVal} ${JustifyContentVal} bg-darkButtonUnimportantColor rounded-md [&>*]:text-white border p-1 h-[400px]  [&>*]:p-4 [&>*]:bg-emerald-700 [&>*]:border [&>*]:border-white [&>*]:text-2xl [&>*]:rounded-md`}
       >
         <div>1</div>
         <div>2</div>
@@ -28,7 +28,7 @@ const AlignItems = ({ axis }) => {
           <div className="text-sm">Align-Items</div>
           <select
             defaultValue={"items-stretch"}
-            className="p-1 rounded-md"
+            className="p-1 rounded-md text-white"
             onChange={changeAlign}
           >
             <option value={"items-start"}>flex-start</option>
@@ -42,7 +42,7 @@ const AlignItems = ({ axis }) => {
           <div className="text-sm">Justify-Content</div>
           <select
             defaultValue={"justify-start"}
-            className="p-1 rounded-md"
+            className="p-1 rounded-md  text-white"
             onChange={changeJustify}
           >
             <option value={"justify-start"}>flex-start</option>

@@ -12,7 +12,7 @@ const JustifyContent = ({ axis }) => {
           axis === "column" ? "flex-col" : "flex-row"
         } ${JustifyContentVal} border p-1 ${
           axis === "column" ? "h-[400px]" : ""
-        } [&>*]:p-4 [&>*]:bg-emerald-700 [&>*]:border [&>*]:border-white [&>*]:text-2xl [&>*]:rounded-md`}
+        } [&>*]:p-4 [&>*]:bg-emerald-700 [&>*]:border bg-darkButtonUnimportantColor rounded-md [&>*]:border-white [&>*]:text-white [&>*]:text-2xl [&>*]:rounded-md`}
       >
         <div>1</div>
         <div>2</div>
@@ -22,7 +22,7 @@ const JustifyContent = ({ axis }) => {
       <div className="flex justify-between items-center px-2">
         <select
           defaultValue={"justify-start"}
-          className="p-1 rounded-md"
+          className="p-1 rounded-md text-white"
           onChange={changeJustify}
         >
           <option value={"justify-start"}>flex-start</option>

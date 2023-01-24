@@ -14,8 +14,11 @@ const FlexShrink = () => {
     setWidth(e.target.value);
   };
   return (
-    <div className="border p-2">
-      <div className="flex border p-2" style={{ width: `${width}%` }}>
+    <div className="border p-2 border-lightText rounded-md">
+      <div
+        className="flex border p-2 border-lightText rounded-md"
+        style={{ width: `${width}%` }}
+      >
         <div
           style={{ flexShrink: flexShrink1 }}
           className="border border-green-400 p-1 grow"

@@ -64,7 +64,7 @@ const Header = ({ changeMobNav }) => {
           />
         </button>
       </div>
-      <div className="hidden lg:block">
+      <div className="hidden md:block">
         <button onClick={changeTheme}>
           <Image
             src={theme === "light" ? moon : sun}

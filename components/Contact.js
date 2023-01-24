@@ -7,7 +7,7 @@ const Contact = () => {
     <div className="text-xl p-2" id="contact">
       <div>
         <h2 className="text-3xl p-4 text-center font-bold">تواصل معنا</h2>
-        <p>
+        <p className="mx-4">
           مدارج البرمجة هي مدونة للمبرمج العربي، أكيد هحب أعرف رأيك في الشرح،
           ولو عندك أي اقتراح لموضوع نشرحه متترددش انك تتواصل معانا.
         </p>

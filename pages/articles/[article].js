@@ -64,7 +64,7 @@ const Article = ({ post }) => {
         >
           <DynamicMdx />
         </div>
-        <div className="flex flex-col items-end fixed left-0 top-1/2">
+        <div className="flex lg:flex-col items-end justify-center lg:justify-start lg:fixed left-0 top-[40%]">
           <a
             target={"_blank"}
             rel="noreferrer"

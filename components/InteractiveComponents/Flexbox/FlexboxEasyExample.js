@@ -23,7 +23,9 @@ const FlexBoxEasy = ({ widthChanging, AxisExplain }) => {
   };
 
   return (
-    <div className={`bg-darkButtonUnimportantColor p-4 mb-4 text-white `}>
+    <div
+      className={`bg-darkButtonUnimportantColor rounded-md p-4 mb-4 text-white `}
+    >
       {widthChanging === true && (
         <div className="w-10/12 mx-auto flex gap-4 items-center">
           <input
