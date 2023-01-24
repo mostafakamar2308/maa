@@ -4,11 +4,13 @@ import Head from "next/head";
 import { fetchSpecificArticle } from "../../lib/FetchSpecificArticle";
 import { useContext, useMemo, useState } from "react";
 import { themeContext } from "../../context/context";
-import LikesComponent from "../../components/LikesComponent";
+import Image from "next/image";
+import facebook from "../../assets/facebook.svg";
+import linkedin from "../../assets/linkedin.svg";
+import twitter from "../../assets/twitter.svg";
 import moment from "moment";
 
 const Article = ({ post }) => {
-  const [likes, setLikes] = useState(post.likes);
   const { theme } = useContext(themeContext);
 
   const DynamicMdx = useMemo(() => {
@@ -55,7 +57,7 @@ const Article = ({ post }) => {
           |{moment(post.createdAt).format("YYYY/MM/DD")}
         </p>
       </div>
-      <div className="md:flex text-white !w-screen overflow-hidden ">
+      <div className="md:flex text-white !w-screen overflow-hidden relative">
         <div
           className={`prose lg:w-2/3 ${
             theme === "dark" ? "prose-invert" : ""
@@ -63,8 +65,44 @@ const Article = ({ post }) => {
         >
           <DynamicMdx />
         </div>
-        <div className="grow relative flex items-center justify-center">
-          <LikesComponent likes={likes} slug={post.slug} />
+        <div className="flex flex-col items-end fixed left-0 top-1/2">
+          <a
+            target={"_blank"}
+            rel="noreferrer"
+            href={`https://www.facebook.com/sharer/sharer.php?u=https%3A//www.madaregprogramming.live/articles/${post.slug}`}
+          >
+            <Image
+              src={facebook}
+              alt="share on facebook"
+              width="50"
+              height={50}
+            ></Image>{" "}
+          </a>
+          <a
+            target={"_blank"}
+            rel="noreferrer"
+            href={`https://www.linkedin.com/shareArticle?mini=true&url=https%3A//www.madaregprogramming.live/articles/${post.slug}`}
+          >
+            <Image
+              src={linkedin}
+              alt="share on facebook"
+              width="50"
+              height={50}
+            ></Image>{" "}
+          </a>
+          <a
+            target={"_blank"}
+            rel="noreferrer"
+            href={`https://twitter.com/intent/tweet?text=https%3A//www.madaregprogramming.live/articles/${post.slug}`}
+          >
+            {" "}
+            <Image
+              src={twitter}
+              alt="share on facebook"
+              width="50"
+              height={50}
+            ></Image>{" "}
+          </a>
         </div>
       </div>
     </div>
