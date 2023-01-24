@@ -1,8 +1,15 @@
+import { useContext } from "react";
 import Highlight from "react-highlight";
+import { themeContext } from "../context/context";
 const CodeBlock = ({ codeText, language }) => {
+  const { theme } = useContext(themeContext);
   return (
     <div dir="ltr" className="relative mt-8">
-      <div className="text-white font-cousin absolute bg-[#090b11] p-2 rounded-t-lg right-0 -top-8 ">
+      <div
+        className={`text-white font-cousin absolute  p-2 rounded-t-lg right-0 -top-8 ${
+          theme === "dark" ? "bg-[#090b11]" : "bg-[#1f2937]"
+        }`}
+      >
         {language.toUpperCase()}
       </div>
       <Highlight
