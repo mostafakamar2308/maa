@@ -30,6 +30,7 @@ export default function handler(req, res) {
     .then((response) => {
       console.log(res.statusCode);
       console.log("success");
+      return "success";
     })
     .catch((err) => {
       console.log(err);
