@@ -16,12 +16,13 @@ export default async function handler(req, res) {
       spreadsheetId,
       range: "Sheet1!A:B",
     });
-    return res.status(200).json(getRows.data.values);
+    res.status(200).json(getRows.data.values);
   }
   if (req.method === "POST") {
     const { name, email } = req.body;
     if (!email | !name) {
-      return res.status(400).json({
+      res.status(400).json({
+        code: 404,
         error: "Please fill in all the fields",
       });
     }
@@ -41,7 +42,7 @@ export default async function handler(req, res) {
     });
     const isThere = getRows.data.values.filter((ele) => ele[0] === email);
     if (isThere.length > 0) {
-      return res.status(200).json({ msg: "تم تسجيلك من قبل" });
+      res.status(400).json({ code: 400, msg: "تم تسجيلك من قبل" });
     }
     await googleSheets.spreadsheets.values.append({
       auth,
@@ -52,6 +53,6 @@ export default async function handler(req, res) {
         values: [[name, email, true, false]],
       },
     });
-    return res.status(200).json({ msg: "تم تسجيلك بنجاح" });
+    res.status(200).json({ code: 200, msg: "تم تسجيلك بنجاح" });
   }
 }

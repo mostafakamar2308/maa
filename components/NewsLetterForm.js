@@ -17,34 +17,41 @@ const NewsForm = () => {
 
   const submitUser = async (e) => {
     e.preventDefault();
-    await fetch("/api/Newsletter", {
+    const response = await fetch("/api/Newsletter", {
       method: "POST",
       body: JSON.stringify(userData),
       headers: {
         "Content-Type": "application/json",
       },
-    })
-      .then((res) => {
-        setMsg((prev) => {
-          return {
-            ...prev,
-            msg: "تم تسجيلك بنجاح",
-            visible: true,
-            color: "text-green-500",
-          };
-        });
-      })
-      .catch((e) => {
-        console.log(e);
-        setMsg((prev) => {
-          return {
-            ...prev,
-            msg: "حصل خطأ، حاول مرة أخري",
-            visible: true,
-            color: "text-red-500",
-          };
-        });
+    });
+    const item = await response.json();
+    console.log(item);
+    if (item.code === 200) {
+      setMsg((prev) => {
+        return {
+          ...prev,
+          msg: "تم تسجيلك بنجاح",
+          visible: true,
+          color: "text-green-500",
+        };
       });
+    }
+    if (item.code === 400) {
+      setMsg((prev) => {
+        return {
+          ...prev,
+          msg: "حصل خطأ، حاول مرة أخري",
+          visible: true,
+          color: "text-red-500",
+        };
+      });
+    }
+    // .then((res) => {
+
+    // })
+    // .catch((e) => {
+
+    // });
   };
   return (
     <>
