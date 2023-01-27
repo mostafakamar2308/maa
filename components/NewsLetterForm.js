@@ -17,7 +17,7 @@ const NewsForm = () => {
 
   const submitUser = async (e) => {
     e.preventDefault();
-    await fetch("https://www.madaregprogramming.live/api/Newsletter", {
+    await fetch("/api/Newsletter", {
       method: "POST",
       body: JSON.stringify(userData),
       headers: {
