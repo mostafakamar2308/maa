@@ -40,7 +40,7 @@ const NewsForm = () => {
       setMsg((prev) => {
         return {
           ...prev,
-          msg: "حصل خطأ، حاول مرة أخري",
+          msg: "هذا البريد مسجل مسبقا",
           visible: true,
           color: "text-red-500",
         };

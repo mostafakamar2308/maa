@@ -1,9 +1,10 @@
 const { google } = require("googleapis");
+const path = require("path");
 
 export default async function handler(req, res) {
   const { method } = req;
   const auth = new google.auth.GoogleAuth({
-    keyFile: "./secrets.json",
+    keyFile: path.join(process.cwd(), "secrets.json"),
     scopes: "https://www.googleapis.com/auth/spreadsheets",
   });
 
