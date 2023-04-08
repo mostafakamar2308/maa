@@ -34,9 +34,3 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-
-#email
-sendEmails.js
-
-#mjml files
-*.mjml
