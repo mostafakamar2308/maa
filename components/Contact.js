@@ -21,9 +21,9 @@ const Contact = () => {
             <Image src={email} alt="email Image" width={40} height={40} />
             <a
               className="hover:text-white duration-300 text-base md:text-xl"
-              href="mailto:mostafakamar.dev@gmail.com"
+              href="mailto:madareg.barmaja@gmail.com"
             >
-              mostafakamar.dev@gmail.com
+              madareg.barmaja@gmail.com
             </a>
           </div>
         </div>
@@ -53,9 +53,9 @@ const Contact = () => {
               target={"_blank"}
               className="text-base md:text-xl"
               rel={"noreferrer"}
-              href="https://t.me/madareg_programming"
+              href="https://t.me/Madareg_barmja"
             >
-              Madareg_Programming
+              Madareg_barmja
             </a>
           </div>
         </div>
